@@ -1,1 +1,1 @@
-web: ./dart-sdk/bin/dart bin/main.dart
+commandline: ./dart-sdk/bin/dart bin/main.dart
