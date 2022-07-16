@@ -3,9 +3,9 @@ import 'package:teledart/telegram.dart';
 import 'package:telegram_bot_on_dart/command_text.dart';
 
 Future<void> main() async {
- // var BOT_TOKEN = '5468422760:AAHQL1yzEYRhZhfHbJhiCq1ghLGYq59G4L4';
-  final username = (await Telegram('TOKEN').getMe()).username;
-  var teledart = TeleDart('TOKEN', Event(username!));
+  var TOKEN = '5468422760:AAHQL1yzEYRhZhfHbJhiCq1ghLGYq59G4L4';
+  final username = (await Telegram(TOKEN).getMe()).username;
+  var teledart = TeleDart(TOKEN, Event(username!));
 
   teledart.start();
 
