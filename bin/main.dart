@@ -12,7 +12,7 @@ Future<void> main() async {
   teledart.start();
 
   teledart.onCommand('start')
-      .listen((message) => message.reply('Hello World'));
+      .listen((message) => message.reply(startMessage));
 
   teledart.onCommand('info_113').listen((message) => message.reply(info_113));
   teledart.onCommand('info_124').listen((message) => message.reply(info_124));
