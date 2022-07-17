@@ -6,10 +6,6 @@ version: 1.0.0
 environment:
   sdk: '>=2.16.2 <3.0.0'
 
-
-# dependencies:
-#   path: ^1.8.0
-
 dependencies:
   teledart: ^0.3.4
   path: ^1.8.0
