@@ -1,10 +1,12 @@
+import 'dart:io';
+
 import 'package:teledart/teledart.dart';
 import 'package:teledart/telegram.dart';
 import 'package:telegram_bot_on_dart/command_text.dart';
 
 Future<void> main() async {
 
-  var teledart = TeleDart(Telegram('TOKEN'), Event());
+  var teledart = TeleDart(Telegram(Platform.environment['TOKEN']), Event());
 
   teledart.start().then((me) => print('${me.username} is initialised'));
 
