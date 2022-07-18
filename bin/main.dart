@@ -1,15 +1,18 @@
 import 'package:teledart/teledart.dart';
 import 'package:teledart/telegram.dart';
 import 'package:telegram_bot_on_dart/command_text.dart';
-import 'dart:io' show Platform;
 
 Future<void> main() async {
-  final envVars = Platform.environment;
-  var TOKEN = '5468422760:AAHQL1yzEYRhZhfHbJhiCq1ghLGYq59G4L4';
-  final username = (await Telegram(envVars[TOKEN]!).getMe()).username;
-  var teledart = TeleDart(envVars[TOKEN]!, Event(username!));
 
-  teledart.start();
+  var teledart = TeleDart(Telegram('TOKEN'), Event());
+
+  teledart.start().then((me) => print('${me.username} is initialised'));
+
+  teledart
+      .onMessage(keyword: 'Fight for freedom')
+      .listen((message) => message.reply('Stand with Hong Kong'));
+
+  var TOKEN = '5468422760:AAHQL1yzEYRhZhfHbJhiCq1ghLGYq59G4L4';
 
   teledart.onCommand('start')
       .listen((message) => message.reply(startMessage));
